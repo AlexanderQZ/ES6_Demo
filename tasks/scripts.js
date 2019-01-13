@@ -1,3 +1,4 @@
+'use strict';
 import gulp from 'gulp';
 import gulpif from 'gulp-if';
 import concat from 'gulp-concat';
@@ -20,16 +21,16 @@ gulp.task('scripts',()=>{
         }))
         .pipe(named())
         .pipe(gulpWebpack({
+            mode: 'development',
             module:{
-                loaders:[{
-                    test:/\.js$/,
-                    loader:'babel'
+                rules:[{
+                    test:/\.js$/
                 }]
             }
         }), null, (err, stats)=>{
             log(`Finished '${colors.cyan('scripts')}'`, stats.toString({
                 chunks: false
-            }))
+            }));
         })
         .pipe(gulp.dest('server/public/js'))
         .pipe(rename({
@@ -38,5 +39,5 @@ gulp.task('scripts',()=>{
         }))
         .pipe(uglify({compress:{properties: false}, output:{'quote_keys': true}}))
         .pipe(gulp.dest('server/public/js'))
-        .pipe(gulpif(args.watch, livereload()))
+        .pipe(gulpif(args.watch, livereload()));
 })
