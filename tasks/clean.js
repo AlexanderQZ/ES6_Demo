@@ -1,7 +1,9 @@
-import gulp from 'gulp';
-import del from 'del';
-import args from './util/args';
+'use strict';
 
-gulp.task('clean',()=>{
-    return del(['server/public', 'server/views']);
+let gulp = require('gulp');
+let del = require('del');
+
+gulp.task('clean',function(done){
+    del(['server/public', 'server/views']);
+    done();
 });

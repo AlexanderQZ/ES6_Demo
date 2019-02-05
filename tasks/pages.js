@@ -1,10 +1,25 @@
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import livereload from 'gulp-livereload';
-import args from './util/args';
+'use strict';
+let gulp = require('gulp');
+let gulpif = require('gulp-if');
+let watchify = require('watchify');
+let browserify = require('browserify');
+let assign = require('lodash.assign');
+let browserSync = require('browser-sync').create();
+let args = require('./util/args');
 
-gulp.task('pages',()=>{
-    return gulp.src('app/**/*.ejs')
-        .pipe(gulp.dest('server'))
-        .pipe(gulpif(args.watch, livereload()))
-})
+var customOpts = {
+    entries: ['app/views/index.html'],
+    debug: true
+};
+
+gulp.task('pages', bundle);
+var opts = assign({}, watchify.args, customOpts);
+var b = watchify(browserify(opts));
+gulp.task('scripts', bundle);
+b.on('update', bundle);
+
+function bundle() {
+    return  gulp.src('app/**/*.html')
+            .pipe(gulp.dest('server'));
+            // .pipe(browserSync.reload({stream:true}));
+}

@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./app/js/class/lesson2.js":
+/*!*********************************!*\
+  !*** ./app/js/class/lesson2.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nfunction test() {\n  var a = 1;\n  var b = 2;\n  var c = 0;\n  var d = 0;\n  console.log(a, b, c);\n}\n\ntest();\n\n//# sourceURL=webpack:///./app/js/class/lesson2.js?");
+
+/***/ }),
+
 /***/ "./app/js/index.js":
 /*!*************************!*\
   !*** ./app/js/index.js ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./app/js/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _class_lesson2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./class/lesson2.js */ \"./app/js/class/lesson2.js\");\n/* harmony import */ var _class_lesson2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_class_lesson2_js__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./app/js/index.js?");
 
 /***/ }),
 
