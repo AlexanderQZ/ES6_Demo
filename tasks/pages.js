@@ -20,6 +20,6 @@ b.on('update', bundle);
 
 function bundle() {
     return  gulp.src('app/**/*.html')
-            .pipe(gulp.dest('server'));
-            // .pipe(browserSync.reload({stream:true}));
+            .pipe(gulp.dest('server'))
+            .pipe(browserSync.reload({stream:true}));
 }

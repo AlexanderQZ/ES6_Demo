@@ -60,10 +60,10 @@ gulp.task('serve', (done)=>{
         }
         // port:3000  // 指定访问服务器的端口号
     });
-    gulp.watch(['app/js/*.js'], gulp.task('scripts'));
-    gulp.watch(['app/css/*.css'], gulp.task('css'));
-    gulp.watch(['app/views/*.html'], gulp.task('pages'));
-    gulp.watch('server/**/*').on('change',browserSync.reload);
+    gulp.watch(['./app/js/*.js'], gulp.task('scripts'));
+    gulp.watch(['./app/css/*.css'], gulp.task('css'));
+    gulp.watch(['./app/views/*.html'], gulp.task('pages'));
+    gulp.watch('./server/**/*').on('change',browserSync.reload);
     // gulp.watch(['app/css/*.css']).on('change', (path, stats)=>{
     //     browserSync.reload({stream:true});
     // });
